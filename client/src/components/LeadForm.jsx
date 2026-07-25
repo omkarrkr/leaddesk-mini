@@ -1,4 +1,4 @@
-import api from "../services/api";
+import { createLead } from "../services/api";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import {
@@ -34,7 +34,7 @@ const handleSubmit = async (e) => {
   try {
     setLoading(true);
 
-    const res = await api.post("/leads", formData);
+    const res = await createLead(formData);;
 
     console.log(res.data);
 

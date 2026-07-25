@@ -7,7 +7,7 @@ import {
   EyeOff,
   ArrowLeft,
 } from "lucide-react";
-import api from "../services/api";
+import { loginAdmin } from "../services/api";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -44,7 +44,7 @@ function Login() {
     try {
       setLoading(true);
 
-      const res = await api.post("/auth/login", form);
+      const res = await loginAdmin(form);
 
       localStorage.setItem("token", res.data.token);
 

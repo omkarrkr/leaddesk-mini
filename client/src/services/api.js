@@ -6,9 +6,14 @@ const api = axios.create({
 
 export default api;
 
-export const createLead = (data) => api.post("/", data);
+// Lead APIs
+export const createLead = (data) => api.post("/leads", data);
 
-export const getLeads = () => api.get("/");
+export const getLeads = () => api.get("/leads");
 
 export const updateStatus = (id, status) =>
-  api.put(`/${id}`, { status });
+  api.put(`/leads/${id}`, { status });
+
+// Auth API
+export const loginAdmin = (data) =>
+  api.post("/auth/login", data);

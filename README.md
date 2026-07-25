@@ -1,56 +1,78 @@
 # 🚀 LeadDesk Mini
 
-A modern full-stack Lead Management System built using the MERN Stack. It allows businesses to collect client inquiries through a landing page and manage them through a secure admin dashboard.
+A modern **full-stack Lead Management System** built using the **MERN Stack**. It enables businesses to collect client inquiries through a professional landing page and manage them from a secure admin dashboard.
 
-![React](https://img.shields.io/badge/React-19-blue?logo=react)
-
-![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
-
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)
-
-![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
-
-![Render](https://img.shields.io/badge/Backend-Render-purple?logo=render)
-
-![License](https://img.shields.io/badge/License-Educational-blue)
 ---
 
-## 🌐 Live Demo
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
+![Render](https://img.shields.io/badge/Backend-Render-purple?logo=render)
+![License](https://img.shields.io/badge/License-Educational-blue)
 
-### Frontend (Vercel)
+---
+
+# 🌐 Live Demo
+
+### Frontend
 https://leaddesk-mini-liard.vercel.app
 
-### Backend (Render)
+### Backend API
 https://leaddesk-backend-p357.onrender.com
+
+### Admin Login
+https://leaddesk-mini-liard.vercel.app/admin/login
+
+---
+
+# 🔑 Demo Admin Credentials
+
+Use these credentials to access the admin dashboard.
+
+**Email**
+
+```
+admin@webcraft.com
+```
+
+**Password**
+
+```
+admin123
+```
 
 ---
 
 # ✨ Features
 
-## Landing Page
+## 🌐 Landing Page
 
-- Modern responsive UI
-- Professional Hero Section
-- Services Section
-- Contact Form
-- Beautiful Footer
+- Responsive modern UI
+- Hero section
+- Services section
+- Contact form
+- Beautiful footer
+- Mobile-friendly design
 
-## Lead Management
+## 📋 Lead Management
 
 - Submit new leads
 - Store leads in MongoDB Atlas
-- Success toast notifications
 - Form validation
+- Loading indicators
+- Success & error toast notifications
 
-## Admin Dashboard
+## 🔐 Admin Dashboard
 
-- Secure Login (JWT Authentication)
+- JWT Authentication
 - Protected Routes
-- View all leads
-- Search leads
-- Update lead status
-- Dashboard statistics
-- Responsive data table
+- Secure Login
+- Dashboard Statistics
+- Search Leads
+- Update Lead Status
+- Responsive Table
+- Logout functionality
 
 ---
 
@@ -61,7 +83,7 @@ https://leaddesk-backend-p357.onrender.com
 - React
 - Vite
 - Tailwind CSS
-- React Router
+- React Router DOM
 - Axios
 - React Hot Toast
 - Lucide React Icons
@@ -75,6 +97,7 @@ https://leaddesk-backend-p357.onrender.com
 - JWT Authentication
 - bcryptjs
 - CORS
+- dotenv
 
 ## Deployment
 
@@ -86,29 +109,30 @@ https://leaddesk-backend-p357.onrender.com
 
 # 📁 Project Structure
 
-```
+```text
 LeadDesk-Mini
 │
 ├── client
 │   ├── src
 │   ├── public
-│   ├── package.json
 │   └── ...
 │
 ├── server
+│   ├── config
 │   ├── controllers
+│   ├── middleware
 │   ├── models
 │   ├── routes
-│   ├── middleware
-│   ├── config
 │   └── ...
+│
+├── screenshots
 │
 └── README.md
 ```
 
 ---
 
-# ⚙ Installation
+# ⚙️ Installation
 
 ## Clone Repository
 
@@ -140,15 +164,33 @@ npm run dev
 
 # 🔐 Environment Variables
 
-Create a `.env` file inside the `server` folder.
+Create a `.env` file inside the **server** folder.
 
-```
+```env
 PORT=5000
 
 MONGO_URI=your_mongodb_connection_string
 
 JWT_SECRET=your_secret_key
 ```
+
+---
+
+# 📡 API Endpoints
+
+## Lead APIs
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/leads` | Create Lead |
+| GET | `/api/leads` | Get All Leads |
+| PUT | `/api/leads/:id` | Update Lead Status |
+
+## Authentication APIs
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/auth/login` | Admin Login |
 
 ---
 
@@ -176,14 +218,17 @@ JWT_SECRET=your_secret_key
 
 ![Admin Dashboard](./screenshots/dashboard.png)
 
-# 📌 Future Improvements
+---
 
-- Export leads to CSV
-- Email notifications
-- Admin profile management
+# 🚀 Future Improvements
+
+- Export Leads to CSV
+- Email Notifications
+- Admin Profile Management
 - Pagination
 - Analytics Dashboard
 - Dark Mode
+- Multiple Admin Accounts
 
 ---
 
@@ -191,7 +236,7 @@ JWT_SECRET=your_secret_key
 
 **Omkar Kumar**
 
-B.Tech CSE Student
+B.Tech Computer Science & Engineering
 
 BMS College of Engineering
 
@@ -202,4 +247,10 @@ https://github.com/omkarrkr
 
 # 📄 License
 
-This project is created for educational and training purposes.
+This project was developed for educational and training purposes.
+
+---
+
+# 🙏 Acknowledgements
+
+This project was built as part of the **Digital Heroes Training Task** to demonstrate full-stack web development skills using the MERN stack.

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
@@ -7,7 +8,6 @@ import Login from "./pages/Login";
 function App() {
   return (
     <BrowserRouter>
-
       <Routes>
 
         <Route
@@ -22,11 +22,14 @@ function App() {
 
         <Route
           path="/admin"
-          element={<Admin />}
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+          }
         />
 
       </Routes>
-
     </BrowserRouter>
   );
 }

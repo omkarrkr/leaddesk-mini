@@ -1,5 +1,6 @@
 import { updateStatus } from "../services/api";
 import { Inbox } from "lucide-react";
+import { SearchX } from "lucide-react";
 
 function LeadTable({ leads, refresh }) {
   const handleStatus = async (id, status) => {
@@ -8,23 +9,25 @@ function LeadTable({ leads, refresh }) {
   };
 
   if (leads.length === 0) {
-    return (
-      <div className="bg-white rounded-3xl shadow-xl p-20 text-center">
-        <Inbox
-          size={55}
-          className="mx-auto text-gray-300 mb-5"
-        />
+  return (
+    <div className="bg-white rounded-2xl shadow-xl p-16 flex flex-col items-center justify-center">
 
-        <h2 className="text-2xl font-bold text-slate-700">
-          No Leads Found
-        </h2>
+      <SearchX
+        size={60}
+        className="text-gray-300 mb-5"
+      />
 
-        <p className="text-gray-500 mt-2">
-          New submissions will appear here.
-        </p>
-      </div>
-    );
-  }
+      <h2 className="text-2xl font-bold text-gray-700">
+        No Leads Found
+      </h2>
+
+      <p className="text-gray-500 mt-2">
+        Try another search or wait for new leads.
+      </p>
+
+    </div>
+  );
+}
 
   return (
     <div className="bg-white rounded-3xl shadow-xl overflow-hidden">

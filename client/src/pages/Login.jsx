@@ -7,7 +7,7 @@ import {
   EyeOff,
   ArrowLeft,
 } from "lucide-react";
-import axios from "axios";
+import api from "../services/api";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
@@ -44,10 +44,7 @@ function Login() {
     try {
       setLoading(true);
 
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form
-      );
+      const res = await api.post("/auth/login", form);
 
       localStorage.setItem("token", res.data.token);
 
@@ -150,14 +147,15 @@ function Login() {
               />
 
               <input
-                type="email"
-                name="email"
-                required
-                value={form.email}
-                onChange={handleChange}
-                placeholder="admin@webcraft.com"
-                className="w-full p-4 outline-none bg-transparent"
-              />
+              type="email"
+              name="email"
+              required
+              autoComplete="email"
+              value={form.email}
+              onChange={handleChange}
+              placeholder="admin@example.com"
+              className="w-full p-4 outline-none bg-transparent"
+                />
 
             </div>
 
@@ -179,18 +177,19 @@ function Login() {
               />
 
               <input
-                type={
-                  showPassword
-                    ? "text"
-                    : "password"
-                }
-                name="password"
-                required
-                value={form.password}
-                onChange={handleChange}
-                placeholder="••••••••"
-                className="w-full p-4 outline-none bg-transparent"
-              />
+                  type={
+                    showPassword
+                      ? "text"
+                      : "password"
+                  }
+                  name="password"
+                  required
+                  autoComplete="current-password"
+                  value={form.password}
+                  onChange={handleChange}
+                  placeholder="••••••••"
+                  className="w-full p-4 outline-none bg-transparent"
+                />
 
               <button
                 type="button"
@@ -215,7 +214,7 @@ function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer flex items-center justify-center gap-3 disabled:opacity-70"
+            className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 cursor-pointer disabled:cursor-not-allowed flex items-center justify-center gap-3 disabled:opacity-70"
           >
 
             <LogIn size={20} />
@@ -232,7 +231,7 @@ function Login() {
 
         <div className="mt-8 border-t pt-6">
 
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-xs text-gray-400">
             Built for Digital Heroes Training Task
           </p>
 

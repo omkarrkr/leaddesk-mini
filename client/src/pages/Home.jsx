@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Features from "../components/Features";
@@ -10,7 +11,8 @@ function Home() {
       <Hero />
       <Features />
       <LeadForm />
-    </>
+    <Footer />
+</>
   );
 }
 

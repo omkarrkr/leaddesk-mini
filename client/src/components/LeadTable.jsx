@@ -30,9 +30,11 @@ function LeadTable({ leads, refresh }) {
 }
 
   return (
-    <div className="bg-white rounded-3xl shadow-xl overflow-hidden">
+  <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
 
-      <table className="w-full">
+    <div className="overflow-x-auto">
+
+      <table className="min-w-[900px] w-full">
 
         <thead className="bg-slate-900 text-white">
 
@@ -159,7 +161,7 @@ function LeadTable({ leads, refresh }) {
         </tbody>
 
       </table>
-
+          </div>
     </div>
   );
 }

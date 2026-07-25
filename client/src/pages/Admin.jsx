@@ -41,12 +41,21 @@ function Admin() {
   }, []);
 
   const filteredLeads = useMemo(() => {
-    return leads.filter((lead) =>
-      `${lead.company} ${lead.name} ${lead.email}`
-        .toLowerCase()
-        .includes(search.toLowerCase())
-    );
-  }, [search, leads]);
+  const query = search.toLowerCase().trim();
+
+  return leads.filter((lead) =>
+    [
+      lead.company,
+      lead.name,
+      lead.email,
+      lead.status,
+      lead.budget,
+    ]
+      .join(" ")
+      .toLowerCase()
+      .includes(query)
+  );
+}, [search, leads]);
 
   const stats = {
     total: leads.length,

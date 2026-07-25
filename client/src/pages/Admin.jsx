@@ -56,14 +56,18 @@ function Admin() {
   };
 
   if (loading) {
-    return (
-      <div className="h-screen flex items-center justify-center bg-slate-100">
-        <h1 className="text-3xl font-bold text-blue-600 animate-pulse">
-          Loading Dashboard...
-        </h1>
-      </div>
-    );
-  }
+  return (
+    <div className="h-screen flex flex-col items-center justify-center bg-slate-100">
+
+      <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+
+      <p className="mt-6 text-lg text-gray-600 font-medium">
+        Loading Dashboard...
+      </p>
+
+    </div>
+  );
+}
 
   return (
     <div className="min-h-screen bg-slate-100">
